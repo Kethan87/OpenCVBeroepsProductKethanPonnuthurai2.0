@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/kethan/eclipse-workspace/OpenCVBeroepsProductKethanPonnuthurai/build/default",
+  "command": "/usr/bin/c++  -I/home/kethan/eclipse-workspace/OpenCVBeroepsProductKethanPonnuthurai/build/default -I/home/kethan/eclipse-workspace/OpenCVBeroepsProductKethanPonnuthurai/src -isystem /usr/include/opencv4 -Wall -Wextra -Wconversion -o CMakeFiles/OpenCVBeroepsProductKethanPonnuthurai.dir/src/videoShapesBeroepsProduct.cpp.o -c /home/kethan/eclipse-workspace/OpenCVBeroepsProductKethanPonnuthurai/src/videoShapesBeroepsProduct.cpp",
+  "file": "/home/kethan/eclipse-workspace/OpenCVBeroepsProductKethanPonnuthurai/src/videoShapesBeroepsProduct.cpp"
+},
+{
+  "directory": "/home/kethan/eclipse-workspace/OpenCVBeroepsProductKethanPonnuthurai/build/default",
+  "command": "/usr/bin/c++  -I/home/kethan/eclipse-workspace/OpenCVBeroepsProductKethanPonnuthurai/build/default -I/home/kethan/eclipse-workspace/OpenCVBeroepsProductKethanPonnuthurai/src -isystem /usr/include/opencv4 -Wall -Wextra -Wconversion -o CMakeFiles/OpenCVBeroepsProductKethanPonnuthurai.dir/src/ShapeFunctions.cpp.o -c /home/kethan/eclipse-workspace/OpenCVBeroepsProductKethanPonnuthurai/src/ShapeFunctions.cpp",
+  "file": "/home/kethan/eclipse-workspace/OpenCVBeroepsProductKethanPonnuthurai/src/ShapeFunctions.cpp"
+}
+]
