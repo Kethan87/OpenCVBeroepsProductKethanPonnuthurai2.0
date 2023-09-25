@@ -6,8 +6,8 @@ using namespace cv;
 
 const uint8_t ESCAPE_KEY = 27;
 const uint16_t MIN_AREA = 1000;
-const double MIN_RECTANGLE_AREA_MARGIN = 0.85;
-const double MAX_RECTANGLE_AREA_MARGIN = 1.15;
+const double MIN_RECTANGLE_AREA_MARGIN = 0.9;
+const double MAX_RECTANGLE_AREA_MARGIN = 1.1;
 const double MIN_TRIANGLE_AREA_MARGIN = 0.85;
 const double MAX_TRIANGLE_AREA_MARGIN = 1.15;
 const double MIN_SQUARE_AREA_MARGIN = 0.85;
@@ -55,11 +55,11 @@ vector<uint16_t> getColor(const Shape& shape)
     vector<uint16_t> colorRange;
     if (shape.color == "groen")
     {
-        colorRange.assign({55, 44, 0, 86, 255, 255});
+        colorRange.assign({37, 31, 50, 83, 255, 255});
     }
     else if (shape.color == "oranje")
     {
-        colorRange.assign({0, 61, 80, 20, 165, 255});
+        colorRange.assign({0, 147, 115, 19, 255, 255});
     }
     else if (shape.color == "geel")
     {
@@ -67,7 +67,7 @@ vector<uint16_t> getColor(const Shape& shape)
     }
     else if (shape.color == "roze")
     {
-        colorRange.assign({140, 50, 50, 179, 255, 255});
+        colorRange.assign({162, 59, 161, 179, 255, 255});
     }
     return colorRange;
 }
@@ -256,19 +256,12 @@ void colorControls()
 	namedWindow("Trackbars", WINDOW_NORMAL);
 	resizeWindow("Trackbars", 640, 200);
 
-    createTrackbar("Hue Min", "Trackbars", nullptr, 179);
-    createTrackbar("Hue Max", "Trackbars", nullptr, 179);
-    createTrackbar("Sat Min", "Trackbars", nullptr, 255);
-    createTrackbar("Sat Max", "Trackbars", nullptr, 255);
-    createTrackbar("Val Min", "Trackbars", nullptr, 255);
-    createTrackbar("Val Max", "Trackbars", nullptr, 255);
-
-    setTrackbarPos("Hue Min", "Trackbars", hmin);
-    setTrackbarPos("Hue Max", "Trackbars", hmax);
-    setTrackbarPos("Sat Min", "Trackbars", smin);
-    setTrackbarPos("Sat Max", "Trackbars", smax);
-    setTrackbarPos("Val Min", "Trackbars", vmin);
-    setTrackbarPos("Val Max", "Trackbars", vmax);
+	createTrackbar("Hue Min", "Trackbars", &hmin, 179);
+	createTrackbar("Hue Max", "Trackbars", &hmax, 179);
+	createTrackbar("Sat Min", "Trackbars", &smin, 255);
+	createTrackbar("Sat Max", "Trackbars", &smax, 255);
+	createTrackbar("Val Min", "Trackbars", &vmin, 255);
+	createTrackbar("Val Max", "Trackbars", &vmax, 255);
 
 }
 
@@ -299,7 +292,7 @@ void getInteractiveInput()
         ss >> shapeColor;
         if(!verifyTypeAndColor(shapeType, shapeColor))
         {
-        	exit(0);
+        	programOn = false;
         }
 
         {
